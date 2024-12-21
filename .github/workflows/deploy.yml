@@ -38,7 +38,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "campers98-solitudeass-88"
-          entrypoint: "localhost"
+          entrypoint: "deployctl deploy"
           root: "/"
           
           
