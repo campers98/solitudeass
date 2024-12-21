@@ -1,9 +1,9 @@
 name: Deploy
 on:
   push:
-    branches: Master
+    branches: master
   pull_request:
-    branches: Master
+    branches: master
 
 jobs:
   deploy:
@@ -21,7 +21,7 @@ jobs:
       - name: Install Deno
         uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -29,16 +29,16 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "pip3 install -r requirements.txt"
+        run: "pip3 install -U -r requirements.txt"
 
       - name: Build step
-        run: "bash start"
+        run: "python3 main.py"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "campers98-solitudeas"
-          entrypoint: "http://localhost:80"
+          project: "campers98-solitudeass-88"
+          entrypoint: "localhost"
           root: "/"
           
           
